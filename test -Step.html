@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jebro Client Location New</title>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+<script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+</head>
+
+<style type="text/css">
+.btn-primary{background-color:#4cac2c ! important; ! important;color:white ! important;float:right ! important;border-radius:8px ! important;}
+.banner_foot{background-color:#d8d8d8 ! important;height:50px ! important;padding:13px;}
+
+.form-check{padding-left:0px ! important;}
+.form-group{margin-bottom:0px;}
+.genral_label{margin-bottom:0px;background-color:#e3e3e3;color:#4cac2c ! important;width: 100%;height: 35px;padding: 9px;border-top-left-radius: 7px;border-top-right-radius: 7px;}
+.w_30{display:inline-block;width:49%;}
+.bmd-help{font-size:11px ! important;}
+
+.f_some{float:right ! important;color:#4cac2c  ! important;}
+.p_3{padding-left:3px ! important;}
+
+.main_div{border-radius:8px ! important;border:1px solid #d8d8d8;background-color: white;box-shadow: 0px 0px 5px;}
+table tr th{color:#4cac2c ! important;}
+</style>
+<body>
+<div class="container-fluid" style="background-color: cornflowerblue;">
+<div class="container">
+	<div class="row pt-4">
+		<div class="col-xl-6">
+			<div class="main_div">
+			<label class="genral_label">General Information<i class="fas fa-info f_some"></i></label>
+				<form class="pl-3">
+					<div class="form-group w_30 pl-2">
+						<label for="exampleInputEmail1" class="bmd-label-floating">Location Name <i class="fas fa-location-arrow"></i></label>
+						<input type="email" class="form-control" id="exampleInputEmail1">
+					</div>
+					<div class="form-group w_30 pl-2">
+						<label for="exampleInputEmail1" class="bmd-label-floating">Contact <i class="fas fa-phone"></i></label>
+						<input type="number" class="form-control" id="exampleInputEmail1">
+						<span class="bmd-help">We'll never share your Number with anyone else.</span>
+					</div>
+					<div class="form-group w_30 pl-2">
+						<label for="exampleInputEmail1" class="bmd-label-floating">Address 1</label>
+						<input type="email" class="form-control" id="exampleInputEmail1">
+					</div>
+					<div class="form-group w_30 pl-2">
+						<label for="exampleInputEmail1" class="bmd-label-floating">Address 2</label>
+						<input type="email" class="form-control" id="exampleInputEmail1">
+					</div>
+					<div class="form-group w_30 pl-2">
+						<label for="exampleInputEmail1" class="bmd-label-floating">City</label>
+						<input type="email" class="form-control" id="exampleInputEmail1">
+					</div>
+					<div class="form-group w_30 pl-2">
+						<label for="exampleInputEmail1" class="bmd-label-floating">State</label>
+						<input type="email" class="form-control" id="exampleInputEmail1">
+					</div>
+					<div class="form-group w_30 pl-2">
+						<label for="exampleInputEmail1" class="bmd-label-floating">ZIP Code</label>
+						<input type="Number" class="form-control" id="exampleInputEmail1">
+					</div>
+					<div class="form-group w_30 pl-2">
+						<label for="exampleInputEmail1" class="bmd-label-floating">Phone Number</label>
+						<input type="Number" class="form-control" id="exampleInputEmail1">
+					</div>
+					<div class="form-group w_30 pl-2">
+						<label for="exampleInputEmail1" class="bmd-label-floating">Fax Number</label>
+						<input type="Number" class="form-control" id="exampleInputEmail1">
+					</div>
+					<div class="form-group w_30 pl-2">
+						<label for="exampleInputEmail1" >Zone</label>
+						<select class="form-control" id="sel1">
+							<option selected>Choose...</option>
+							<option>South Dakota</option>
+							<option>North Dakota</option>
+							<option>Nebraska</option>
+							<option>lowa</option>
+						</select>
+					</div>
+					<div class="form-group w_30 pl-2">
+						<label for="exampleInputEmail1" >Route</label>
+						<select class="form-control" id="sel1">
+							<option selected>Choose...</option>
+							<option>South Dakota</option>
+							<option>North Dakota</option>
+							<option>Nebraska</option>
+							<option>lowa</option>
+						</select>
+					</div>
+					<div class="form-check pt-3 w_30 text-center">
+						<input type="checkbox" value=""><label class="checkbox-inlie pl-1 pr-3">Active</label>
+						<input type="checkbox" value=""><label class="checkbox-inlie pl-1">Driver Added Account</label>
+					</div>
+				</form>
+			</div>
+		</div>	
+
+	
+		<div class="col-xl-6">
+			<div class="main_div" style="height:;">
+			<label class="genral_label">Product/Tank Information <i class="fas fa-truck f_some"></i></label>
+				<form class="pl-3">
+					<div class="form-group w_30 pl-2 pr-2">
+						<label for="exampleInputEmail1">Product</label>
+						<select class="form-control" id="sel1">
+							<option selected>Choose...</option>
+							<option>Used Oil</option>
+							<option>Oil Filters</option>
+							<option>Oily Water</option>
+							<option>Antifreeze</option>
+						</select>
+					</div>
+					<div class="form-group w_30 pl-2 pr-2">
+						<label for="exampleInputEmail1" class="bmd-label-floating">Tank Size</label>
+						<input type="Number" class="form-control" id="exampleInputEmail1">
+					</div>
+					<div class="form-group w_30 pl-2 pr-2">
+						<label for="exampleInputEmail1" class="bmd-label-floating">Price</label>
+						<input type="Number" class="form-control" id="exampleInputEmail1">
+					</div>
+					<div class="form-group w_30 pl-2">
+						<label for="exampleInputEmail1" class="bmd-label-floating">Gallon 1</label>
+						<input type="Number" class="form-control" id="exampleInputEmail1">
+					</div>
+					<div class="form-group w_30 pl-2 pr-2">
+						<label for="exampleInputEmail1" class="bmd-label-floating">Gallon 2</label>
+						<input type="Number" class="form-control" id="exampleInputEmail1">
+					</div>
+					<div class="form-group w_30 pl-2 pr-2">
+						<label for="exampleInputEmail1" class="bmd-label-floating">Gallon 3</label>
+						<input type="Number" class="form-control" id="exampleInputEmail1">
+					</div>
+					<div class="form-group w_30 pl-2 pr-2">
+						<label for="exampleInputEmail1" class="bmd-label-floating">Gallon 4</label>
+						<input type="Number" class="form-control" id="exampleInputEmail1">
+					</div>
+					<div class="form-group w_30 pl-2">
+						<label for="exampleInputEmail1" class="bmd-label-floating">Average Gallons</label>
+						<input type="Number" class="form-control" id="exampleInputEmail1">
+					</div>
+					<div class="form-group w_30 pl-2 pr-2">
+						<label for="exampleInputEmail1" class="bmd-label-floating">Percent Full</label>
+						<input type="Number" class="form-control" id="exampleInputEmail1">
+					</div>
+					<div class="form-group w_30 pl-2 pr-2">
+						<label for="exampleInputEmail1" class="bmd-label-floating">Estimated Gallons</label>
+						<input type="Number" class="form-control" id="exampleInputEmail1">
+					</div>
+					<div class="form-group w_30 pl-2 pr-2">
+						<label for="exampleInputEmail1" class="bmd-label-floating">Gallon Rate</label>
+						<input type="Number" class="form-control" id="exampleInputEmail1">
+					</div>
+				</form>
+			</div>
+		</div>	
+	</div>
+	
+	<div class="row pt-4">
+		<div class="col-xl-7">
+			<div class="main_div">
+			<label class="genral_label">Scheduling<i class="fas fa-calendar-alt f_some"></i></label>
+				<form class="pl-3">
+					<div class="form-group w_30 pl-2 pr-2">
+						<label for="exampleInputEmail1">Schedule State</label>
+						<select class="form-control" id="sel1">
+							<option selected>Choose...</option>
+							<option>North Dakota</option>
+							<option>South Dakota</option>
+							<option>Oily Water</option>
+							<option>Antifreeze</option>
+						</select>
+					</div>
+					<div class="form-group w_30 pl-2 pr-2">
+						<label for="exampleInputEmail1">Next Recommended Pickup<i class="fas fa-clock p_3"></i></label>
+						<input type="datetime-local" class="form-control" id="exampleInputEmail1">
+					</div>
+					<div class="form-group w_30 pl-2 pr-2">
+						<label for="exampleInputEmail1" class="bmd-label-floating">Frequency Base</label>
+						<input type="email" class="form-control" id="exampleInputEmail1">
+					</div>
+					<div class="form-group w_30 pl-2">
+						<label for="exampleInputEmail1" class="bmd-label-floating">Used Oil Frequency Qty</label>
+						<input type="email" class="form-control" id="exampleInputEmail1">
+					</div>
+					<div class="form-group w_30 pl-2 pr-2">
+						<label for="exampleInputEmail1" class="bmd-label-floating">Filter Frequency Qty</label>
+						<input type="email" class="form-control" id="exampleInputEmail1">
+					</div>
+					<div class="form-group w_30 pl-2 pr-2">
+						<label for="exampleInputEmail1" >Filter Schedule State</label>
+						<select class="form-control" id="sel1">
+							<option selected>Choose...</option>
+							<option>North Dakota</option>
+							<option>South Dakota</option>
+							<option>Oily Water</option>
+							<option>Antifreeze</option>
+						</select>
+					</div>
+					<div class="form-group w_30 pl-2 pr-2">
+						<label for="exampleInputEmail1">Anti Freeze Schedule State</label>
+						<select class="form-control" id="sel1">
+							<option selected>Choose...</option>
+							<option>North Dakota</option>
+							<option>South Dakota</option>
+							<option>Oily Water</option>
+							<option>Antifreeze</option>
+						</select>
+					</div>
+					<div class="form-group w_30 pl-2 pr-2">
+						<label for="exampleInputEmail1" class="">Next Filter Pickup<i class="fas fa-clock p_3"></i>
+                    </label>
+						<input type="datetime-local" class="form-control" id="exampleInputEmail1">
+					</div>
+					<div class="form-check ml-2 pt-3 w_30">
+						<input type="checkbox" value=""><label class="checkbox-inlie pl-1">Picked Up</label>
+					</div>
+				</form>
+			</div>
+		</div>	
+	
+		<div class="col-xl-5">
+			<div class="main_div" style="height:262px;">
+			<label class="genral_label">Billing<i class="fas fa-file-invoice-dollar f_some"></i></label>
+				<form class="pl-3">
+					<div class="form-group w_30 pl-2 pr-2">
+						<label for="exampleInputEmail1" class="bmd-label-floating">PO Number</label>
+						<input type="number" class="form-control" id="exampleInputEmail1">
+					</div>
+					<div class="form-group w_30 pl-2 pr-2">
+						<label for="exampleInputEmail1">Billing Type</label>
+						<select class="form-control" id="sel1">
+							<option selected>No Charge..</option>
+							<option></option>
+							<option></option>
+							<option></option>
+							<option></option>
+						</select>
+					</div>
+					<div class="form-group w_30 pl-2 pr-2">
+						<label for="exampleInputEmail1">Payment Terms</label>
+						<select class="form-control" id="sel1">
+							<option selected>N/A..</option>
+							<option></option>
+							<option></option>
+							<option></option>
+							<option></option>
+						</select>
+					</div>
+					<div class="form-group w_30 pl-2 pr-2">
+						<label for="exampleInputEmail1">Payment Method<i class="fas fa-credit-card p_3"></i></label>
+						<select class="form-control" id="sel1">
+							<option selected>Choose..</option>
+							<option>Card</option>
+							<option>Cash</option>
+							<option>Cheque</option>
+							<option>DD</option>
+						</select>
+					</div>
+					<div class="form-group w_30 pl-2 pr-2">
+						<label for="exampleInputEmail1" class="bmd-label-floating">Filter Price<i class="fas fa-dollar-sign p_3"></i></label>
+						<input type="number" class="form-control" id="exampleInputEmail1">
+					</div>
+				</form>	
+			</div>
+		</div>	
+	</div>
+	
+	<div class="row pt-4">
+		<div class="col-xl-12">
+		<table class="table table-bordered">
+			<thead >
+			<tr style="background-color:#e9e9e9;"> <th>BOL Number</th> <th>Product</th> <th>QTY</th> <th>Pickup Date</th> </tr>
+			</thead>
+			<tbody>
+			<tr STYLE="background-color:white;"><td colspan="4" align="center">No Entries</td></tr>
+			<tr style="background-color:#e9e9e9;"><td colspan="4" align="right">No items to Display</td></tr>
+			</tbody>
+			
+		</table>
+		</div>
+	</div>
+	
+	<div class="row pt-4">
+		<div class="col-xl-7 ">
+			
+				<button type="button" class="btn btn-primary btn-sm ml-2"><i class="fas fa-times-circle pr-1"></i>Cancel</button>
+				<button type="button" class="btn btn-primary btn-sm "><i class="fas fa-check pr-1"></i>Submit</button>
+		
+		</div>
+	</div>
+</div>
+</div>		
+</body>
+</html>
