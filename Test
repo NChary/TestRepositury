@@ -1,0 +1,552 @@
+BEG:
+
+import java.util.List;
+
+public class BegSegment {
+	private String purposeCode;
+	private String poTypeCode;
+	private String poNumber;
+	private String releaseNumber;
+	private String date;
+	private String contactNumber;
+	
+	public BegSegment() {
+	}
+	
+	public BegSegment(List<String> lstBegSegment) {
+		this.purposeCode = lstBegSegment.get(0);
+		this.poTypeCode= lstBegSegment.get(1);
+		this.poNumber= lstBegSegment.get(2);
+		this.releaseNumber= lstBegSegment.get(3);
+		this.date= lstBegSegment.get(4);
+		this.contactNumber= lstBegSegment.get(5);
+	}
+
+	public String getPurposeCode() {
+		return purposeCode;
+	}
+
+	public String getPoTypeCode() {
+		return poTypeCode;
+	}
+
+	public String getPoNumber() {
+		return poNumber;
+	}
+
+	public String getReleaseNumber() {
+		return releaseNumber;
+	}
+
+	public String getDate() {
+		return date;
+	}
+
+	public String getContactNumber() {
+		return contactNumber;
+	}
+
+	@Override
+	public String toString() {
+		return "BegSegment [purposeCode=" + purposeCode + ", poTypeCode=" + poTypeCode + ", poNumber=" + poNumber
+				+ ", releaseNumber=" + releaseNumber + ", date=" + date + ", contactNumber=" + contactNumber + "]";
+	}
+	
+}
+
+
+DTM:
+
+import java.util.List;
+
+public class DtmSegment {
+	private String dateTimeQualifier;
+	private String date;
+
+	public DtmSegment(){
+		
+	}
+	
+	public DtmSegment(List<String> lstDtmSegment){
+		this.dateTimeQualifier = lstDtmSegment.get(0);
+		this.date = lstDtmSegment.get(1);
+	}
+
+	public String getDateTimeQualifier() {
+		return dateTimeQualifier;
+	}
+
+	public String getDate() {
+		return date;
+	}
+
+	@Override
+	public String toString() {
+		return "DtmSegment [dateTimeQualifier=" + dateTimeQualifier + ", date=" + date + "]";
+	}
+}
+
+
+Main:
+
+import java.util.Arrays;
+import java.util.List;
+
+public class EdiParser {
+
+	public static void parseIsaSegment(List<String> lstSegment) {
+		IsaSegment segment = new IsaSegment(lstSegment);
+		System.out.println(segment.toString());
+	}
+
+	public static void parseGsSegment(List<String> lstGsSegment) {
+		GsSegment gsSegment = new GsSegment(lstGsSegment);
+		System.out.println(gsSegment.toString());
+	}
+
+	public static void parseBegSegment(List<String> lstBegSegment) {
+		BegSegment begSegment = new BegSegment(lstBegSegment);
+		System.out.println(begSegment.toString());
+	}
+	
+	public static void parseStSegment(List<String> lstStSegment) {
+		StSegment stSegment = new StSegment(lstStSegment);
+		System.out.println(stSegment.toString());
+	}
+
+	public static void parseN1Segment(List<String> lstN1Segment) {
+		N1Segment n1Segment = new N1Segment(lstN1Segment);
+		System.out.println(n1Segment.toString());
+	}
+	
+	public static void parseN3Segment(List<String> lstN3Segment) {
+		N3Segment n3Segment = new N3Segment(lstN3Segment);
+		System.out.println(n3Segment.toString());
+	}
+	
+	public static void parseN4Segment(List<String> lstN4Segment) {
+		N4Segment n4Segment = new N4Segment(lstN4Segment);
+		System.out.println(n4Segment.toString());
+	}
+	
+	public static void parsePerSegment(List<String> lstPerSegment) {
+		PerSegment perSegment = new PerSegment(lstPerSegment);
+		System.out.println(perSegment.toString());
+	}
+	
+	public static void main(String[] args) {
+		String edi_850="ISA*01*0000000000*01*0000000000*ZZ*ABCDEFGHIJKLMNO*ZZ*123456789012345*101127*1719*U*00400*000003438*0*P* >GS*PO*4405197800*999999999*20101127*1719*1421*X*004010VICS >ST*850*000000010 >BEG*00*SA*08292233294**20101127*610385385 >REF*DP*038 >REF*PS*R >ITD*14*3*2**45**46 >DTM*002*20101214 >PKG*F*68***PALLETIZE SHIPMENT >PKG*F*66***REGULAR >TD5*A*92*P3**SEE XYZ RETAIL ROUTING GUIDE >N1*ST*XYZ RETAIL*9*0003947268292 >N3*31875 SOLON RD >N4*SOLON*OH*44139 >PO1*1*120*EA*9.25*TE*CB*065322-117*PR*RO*VN*AB3542 >PID*F****SMALL WIDGET >PO4*4*4*EA*PLT94**3*LR*15*CT >PO1*2*220*EA*13.79*TE*CB*066850-116*PR*RO*VN*RD5322 >PID*F****MEDIUM WIDGET >PO4*2*2*EA >PO1*3*126*EA*10.99*TE*CB*060733-110*PR*RO*VN*XY5266 >PID*F****LARGE WIDGET >PO4*6*1*EA*PLT94**3*LR*12*CT >PO1*4*76*EA*4.35*TE*CB*065308-116*PR*RO*VN*VX2332 >PID*F****NANO WIDGET >PO4*4*4*EA*PLT94**6*LR*19*CT >PO1*5*72*EA*7.5*TE*CB*065374-118*PR*RO*VN*RV0524 >PID*F****BLUE WIDGET >PO4*4*4*EA >PO1*6*696*EA*9.55*TE*CB*067504-118*PR*RO*VN*DX1875 >PID*F****ORANGE WIDGET >PO4*6*6*EA*PLT94**3*LR*10*CT >CTT*6 >AMT*1*13045.94 >SE*33*000000010 >GE*1*1421 >IEA*1*000003438";
+		//String edi_855 = "ISA*01*0000098245*01*0000917382*ZZ*ABCDEFGHIJKLMNO*ZZ*123456789012345*101127*1719*U*00400*000003438*0*P*> GS*PR*4405197800*999999999*20110527*1719*1421*X*004010VICS ST*855*1001 BAK*00*AC*ABC123*20000430*****20000430 DTM*067*20000507 N1*ST**21*HO1000A00 PO1*1*10*CA*72.95*CT*UK*50387698433528 ACK*IA*10*CA*067*20000507**UK*50387698433528 PO1*2*25*BX*15.75*CT*UK*30387698775411 ACK*IA*25*BX*067*20000507**UK*30387698775411 CTT*2 SE*10*1001 GE*1*1421 IEA*1*000004438";
+		//String edi_810 = "ISA*01*8546200000*01*9835687000*XX*ABCDEFGHIJKLMNO*ZZ*123456789012345*101127*1719*U*00400*000003438*0*P*> GS*IN*4405197800*999999999*20101205*1710*1320*X*004010VICS ST*810*1004 BIG*20101204*217224*20101204*P792940 REF*DP*099 REF*IA*99999 N1*ST**92*123 ITD*01*3***0**60 IT1*1*4*EA*8.60**UP*999999330023 IT1*2*2*EA*15.00**UP*999999330115 IT1*3*2*EA*7.30**UP*999999330146 IT1*4*4*EA*17.20**UP*999999330184 IT1*5*8*EA*4.30**UP*999999330320 IT1*6*4*EA*4.30**UP*999999330337 IT1*7*6*EA*1.50**UP*999999330634 IT1*8*6*EA*1.50**UP*999999330641 TDS*21740 CAD*****GTCT**BM*99999 CTT*8 SE*18*1004 GE*1*1320 IEA*1*000001320";
+		List<String> lstSegments = Arrays.asList(edi_850.split("\\>"));
+
+		//Segment breaking
+		for(String segment:lstSegments) {
+			//	System.out.println("---------"+segment);	
+			//Each segment - field breaking
+			List<String> lstFields =  Arrays.asList(segment.split("\\*"));
+			//System.out.println("Segment :: "+lstFields.get(0));
+			switch(lstFields.get(0)) {
+			case "ISA":
+				parseIsaSegment(lstFields);
+				break;
+
+			case "GS":
+				parseGsSegment(lstFields);
+				break;
+
+			case "BEG":
+				parseBegSegment(lstFields);
+				break;
+
+			case "DTM":
+				parseBegSegment(lstFields);
+				break;
+			case "ST":
+				parseStSegment(lstFields);
+				break;
+
+			case "N1":
+				parseN1Segment(lstFields);
+				break;
+			case "N3":
+				parseN3Segment(lstFields);
+				break;
+			case "N4":
+				parseN4Segment(lstFields);
+				break;
+			case "PER":
+				parsePerSegment(lstFields);
+				break;
+			case "P01":
+
+				break;
+			case "PID":
+
+				break;
+			}
+		}
+
+	}
+}
+
+GS:
+
+import java.util.List;
+
+public class GsSegment {
+	private String gs07ResponsibleAgencyCode;
+	private String gs04Date;
+	private String gs01FunctionalIdentifierCode;
+	private String gs05Time;
+	private String gs02ApplicationSenderCode;
+	private String gs08Version;
+	private String gs06GroupControlNumber;
+	private String gs03ApplicationReceiverCode;
+	
+	public GsSegment(List<String> lstGsSegment) {
+		this.gs01FunctionalIdentifierCode = lstGsSegment.get(1);
+		this.gs02ApplicationSenderCode = lstGsSegment.get(2);
+		this.gs03ApplicationReceiverCode = lstGsSegment.get(3);
+		this.gs04Date = lstGsSegment.get(4);
+		this.gs05Time = lstGsSegment.get(5);
+		this.gs06GroupControlNumber = lstGsSegment.get(6);
+		this.gs07ResponsibleAgencyCode = lstGsSegment.get(7);
+		this.gs08Version = lstGsSegment.get(8);
+	}
+
+	public String getGs07ResponsibleAgencyCode() {
+		return gs07ResponsibleAgencyCode;
+	}
+
+	public String getGs04Date() {
+		return gs04Date;
+	}
+
+	public String getGs01FunctionalIdentifierCode() {
+		return gs01FunctionalIdentifierCode;
+	}
+
+	public String getGs05Time() {
+		return gs05Time;
+	}
+
+	public String getGs02ApplicationSenderCode() {
+		return gs02ApplicationSenderCode;
+	}
+
+	public String getGs08Version() {
+		return gs08Version;
+	}
+
+	public String getGs06GroupControlNumber() {
+		return gs06GroupControlNumber;
+	}
+
+	public String getGs03ApplicationReceiverCode() {
+		return gs03ApplicationReceiverCode;
+	}
+
+	@Override
+	public String toString() {
+		return "GsSegment [gs07ResponsibleAgencyCode=" + gs07ResponsibleAgencyCode + ", gs04Date=" + gs04Date
+				+ ", gs01FunctionalIdentifierCode=" + gs01FunctionalIdentifierCode + ", gs05Time=" + gs05Time
+				+ ", gs02ApplicationSenderCode=" + gs02ApplicationSenderCode + ", gs08Version=" + gs08Version
+				+ ", gs06GroupControlNumber=" + gs06GroupControlNumber + ", gs03ApplicationReceiverCode="
+				+ gs03ApplicationReceiverCode + "]";
+	}
+	
+}
+
+N1:
+
+import java.util.List;
+
+public class N1Segment {
+	private String identifierCode;
+	private String name;
+	private String codeQualifier;
+	private String identificationCode;
+
+	N1Segment(){
+
+	}
+
+	N1Segment(List<String> lstN1Segment){
+		this.identificationCode = lstN1Segment.get(0);
+		this.name = lstN1Segment.get(1);
+		this.codeQualifier = lstN1Segment.get(2);
+		this.identificationCode= lstN1Segment.get(3);
+	}
+
+	public String getIdentifierCode() {
+		return identifierCode;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public String getCodeQualifier() {
+		return codeQualifier;
+	}
+
+	public String getIdentificationCode() {
+		return identificationCode;
+	}
+
+	@Override
+	public String toString() {
+		return "N1Segment [identifierCode=" + identifierCode + ", name=" + name + ", codeQualifier=" + codeQualifier
+				+ ", identificationCode=" + identificationCode + "]";
+	}
+}
+
+
+N3:
+
+import java.util.List;
+
+public class N3Segment {
+	private String addressInformation;
+	
+	N3Segment(){
+		
+	}
+	
+	N3Segment(List<String> lstN3Segment){
+		this.addressInformation = lstN3Segment.get(0);
+	}
+
+	public String getAddressInformation() {
+		return addressInformation;
+	}
+
+	@Override
+	public String toString() {
+		return "N3Segment [addressInformation=" + addressInformation + "]";
+	}
+}
+
+N4:
+
+import java.util.List;
+
+public class N4Segment {
+	private String cityName;
+	private String state;
+	private String postalCode;
+	private String countryCode;
+
+	N4Segment(){
+
+	}
+
+	public N4Segment(List<String> lstBegSegment){
+		this.cityName = lstBegSegment.get(1);
+		this.state = lstBegSegment.get(2);
+		this.postalCode = lstBegSegment.get(3);
+		this.countryCode = lstBegSegment.get(4);
+	}
+
+	public String getCityName() {
+		return cityName;
+	}
+
+	public String getState() {
+		return state;
+	}
+
+	public String getPostalCode() {
+		return postalCode;
+	}
+
+	public String getCountryCode() {
+		return countryCode;
+	}
+
+	@Override
+	public String toString() {
+		return "N4Segment [cityName=" + cityName + ", state=" + state + ", postalCode=" + postalCode + ", countryCode="
+				+ countryCode + "]";
+	}
+}
+
+
+P01:
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class P01Segment {
+	private String assignedIdentification;
+	private String quantityOrder;
+	private String unitCode;
+	private String unitPrice;
+	private String unitPriceCode;
+	private String product06IdQualifier;
+	private String productId;
+	private String product08IdQualifier;
+	private String product09Id;
+	private String product10Qualifier;
+	private String product11Id;
+	
+	private List<P01Segment> lstP01Segment = new ArrayList<>();
+	
+	P01Segment(){
+		
+	}
+	
+	P01Segment(List<String> lstSegment){
+		P01Segment po1Segment = new P01Segment();
+		this.assignedIdentification = lstSegment.get(1);
+		this.quantityOrder = lstSegment.get(2);
+		this.unitCode = lstSegment.get(3);
+		this.unitPrice = lstSegment.get(4);
+		this.unitPriceCode = lstSegment.get(5);
+		this.product06IdQualifier = lstSegment.get(6);
+		this.productId = lstSegment.get(7);
+		this.product08IdQualifier = lstSegment.get(8);
+		this.product09Id = lstSegment.get(9);
+		this.product10Qualifier = lstSegment.get(10);
+		this.product11Id = lstSegment.get(11);
+		
+	}
+
+	public String getAssignedIdentification() {
+		return assignedIdentification;
+	}
+
+	public String getQuantityOrder() {
+		return quantityOrder;
+	}
+
+	public String getUnitCode() {
+		return unitCode;
+	}
+
+	public String getUnitPrice() {
+		return unitPrice;
+	}
+
+	public String getUnitPriceCode() {
+		return unitPriceCode;
+	}
+
+	public String getProduct06IdQualifier() {
+		return product06IdQualifier;
+	}
+
+	public String getProductId() {
+		return productId;
+	}
+
+	public String getProduct08IdQualifier() {
+		return product08IdQualifier;
+	}
+
+	public String getProduct09Id() {
+		return product09Id;
+	}
+
+	public String getProduct10Qualifier() {
+		return product10Qualifier;
+	}
+
+	public String getProduct11Id() {
+		return product11Id;
+	}
+
+	@Override
+	public String toString() {
+		return "P01Segment [assignedIdentification=" + assignedIdentification + ", quantityOrder=" + quantityOrder
+				+ ", unitCode=" + unitCode + ", unitPrice=" + unitPrice + ", unitPriceCode=" + unitPriceCode
+				+ ", product06IdQualifier=" + product06IdQualifier + ", productId=" + productId
+				+ ", product08IdQualifier=" + product08IdQualifier + ", product09Id=" + product09Id
+				+ ", product10Qualifier=" + product10Qualifier + ", product11Id=" + product11Id + "]";
+	}
+}
+
+
+PER:
+
+import java.util.List;
+
+public class PerSegment {
+	private String contactFunctionCode;
+	private String name;
+	private String communicationNumberQualifier;
+	private String communicationNumber;
+	
+	PerSegment(){
+		
+	}
+	
+	public PerSegment(List<String> lstSegment){
+		this.contactFunctionCode= lstSegment.get(1);
+		this.name= lstSegment.get(2);
+		this.communicationNumberQualifier= lstSegment.get(3);
+		this.communicationNumber= lstSegment.get(4);
+	}
+
+	public String getContactFunctionCode() {
+		return contactFunctionCode;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public String getCommunicationNumberQualifier() {
+		return communicationNumberQualifier;
+	}
+
+	public String getCommunicationNumber() {
+		return communicationNumber;
+	}
+
+	@Override
+	public String toString() {
+		return "PerSegment [contactFunctionCode=" + contactFunctionCode + ", name=" + name
+				+ ", communicationNumberQualifier=" + communicationNumberQualifier + ", communicationNumber="
+				+ communicationNumber + "]";
+	}
+	
+}
+
+
+ST:
+
+import java.util.List;
+
+public class StSegment {
+	private String identifierCode;
+	private String controlNumber;
+	
+	StSegment(){
+		
+	}
+	
+	public StSegment(List<String> lstStSegment){
+		this.identifierCode = lstStSegment.get(0);
+		this.controlNumber = lstStSegment.get(1);
+	}
+
+	public String getIdentifierCode() {
+		return identifierCode;
+	}
+
+	public String getControlNumber() {
+		return controlNumber;
+	}
+
+	@Override
+	public String toString() {
+		return "StSegment [identifierCode=" + identifierCode + ", controlNumber=" + controlNumber + "]";
+	}
+}
+
+
+
+
+
